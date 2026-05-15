@@ -1,0 +1,19 @@
+{
+  "name": "cloud-orderflow-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "services/*",
+    "shared/*",
+    "infrastructure/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "lint": "echo \"Add linting in the future\"",
+    "test": "npm run test --workspaces",
+    "dev": "echo \"Use individual service dev scripts from each package\""
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

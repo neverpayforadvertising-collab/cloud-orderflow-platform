@@ -1,0 +1,12 @@
+flowchart TD
+  Client[Client / API Consumer] --> APIGW[API Gateway]
+  APIGW --> OrderLambda[Order Service Lambda]
+  OrderLambda --> SQS[OrderCreated SQS Queue]
+  SQS --> Payment[Payment Service Lambda]
+  SQS --> Inventory[Inventory Service Lambda]
+  SQS --> Shipping[Shipping Service Lambda]
+  Payment --> DynamoDB[Order State Store]
+  Inventory --> DynamoDB
+  Shipping --> DynamoDB
+  SNS[Order Events SNS Topic] --> Audit[CloudWatch + S3 Audit]
+  SQS --> DLQ[Dead Letter Queue]

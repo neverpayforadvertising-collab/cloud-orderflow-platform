@@ -1,0 +1,14 @@
+{
+  "name": "@cloud-orderflow/order-service",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p ../../tsconfig.base.json",
+    "start": "node dist/handler.js"
+  },
+  "dependencies": {
+    "@cloud-orderflow/shared-types": "*",
+    "@cloud-orderflow/shared-utils": "*"
+  }
+}

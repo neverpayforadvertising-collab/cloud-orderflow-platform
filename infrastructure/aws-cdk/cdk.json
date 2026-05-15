@@ -1,0 +1,4 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/cloud-orderflow-platform.ts",
+  "language": "typescript"
+}
