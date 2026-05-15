@@ -30,7 +30,7 @@ This project addresses these challenges by designing a cloud-native order pipeli
 
 The platform is intentionally event-driven. No service directly calls another.
 
-```mermaid
+```
 flowchart TD
   Client[Client / API Consumer] --> APIGW[API Gateway]
   APIGW --> OrderLambda[Order Service Lambda]
@@ -50,7 +50,7 @@ flowchart TD
 
 ### Order Lifecycle
 
-```mermaid
+```
 sequenceDiagram
   participant C as Client
   participant A as API Gateway
