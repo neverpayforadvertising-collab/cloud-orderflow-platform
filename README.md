@@ -1,4 +1,4 @@
-````markdown
+
 # Cloud OrderFlow Platform
 
 A production-style, serverless order-processing platform built with **Node.js, TypeScript, AWS Lambda, API Gateway, SNS, SQS, DynamoDB, and AWS CDK**.
@@ -7,7 +7,6 @@ It demonstrates event-driven microservices, asynchronous processing, idempotency
 
 ## Architecture
 
-```mermaid
 flowchart TD
     C["Client"] --> A["API Gateway"]
     A --> O["Order Lambda"]
@@ -22,7 +21,6 @@ flowchart TD
     PQ --> DLQ["Dead-Letter Queues"]
     IQ --> DLQ
     SQ --> DLQ
-````
 
 SNS distributes each order event to dedicated SQS queues, allowing services to process independently without direct service-to-service calls.
 
