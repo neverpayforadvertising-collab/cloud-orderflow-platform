@@ -5,25 +5,6 @@ A production-style, serverless order-processing platform built with **Node.js, T
 
 It demonstrates event-driven microservices, asynchronous processing, idempotency, retries, dead-letter queues, observability, and least-privilege security.
 
-## Architecture
-
-flowchart TD
-    C["Client"] --> A["API Gateway"]
-    A --> O["Order Lambda"]
-    O --> D["DynamoDB"]
-    O --> T["SNS Topic"]
-    T --> PQ["Payment Queue"] --> P["Payment Lambda"]
-    T --> IQ["Inventory Queue"] --> I["Inventory Lambda"]
-    T --> SQ["Shipping Queue"] --> S["Shipping Lambda"]
-    P --> D
-    I --> D
-    S --> D
-    PQ --> DLQ["Dead-Letter Queues"]
-    IQ --> DLQ
-    SQ --> DLQ
-
-SNS distributes each order event to dedicated SQS queues, allowing services to process independently without direct service-to-service calls.
-
 ## Key Features
 
 * Event-driven SNS-to-SQS fan-out
